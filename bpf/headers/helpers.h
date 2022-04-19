@@ -75,6 +75,8 @@ static long (*bpf_sock_hash_update)(
 static long (*bpf_msg_redirect_hash)(struct sk_msg_md *md, struct bpf_map *map,
                                      void *key, __u64 flags) = (void *)
     BPF_FUNC_msg_redirect_hash;
+static long (*bpf_bind)(struct bpf_sock_addr *ctx, struct sockaddr_in *addr,
+                        int addr_len) = (void *)BPF_FUNC_bind;
 
 #ifdef PRINTNL
 #define PRINT_SUFFIX "\n"
