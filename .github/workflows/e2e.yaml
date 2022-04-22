@@ -3,10 +3,10 @@ name: E2E CI
 on:
   push:
     branches: [ main, test ]
-  paths-ignore:
-      - '.ci/**'
-      - 'docs/**'
-      - '**/*.md'
+  pull_request:
+    branches: [ main, test ]
+    types:
+      - '*'
 
 jobs:
   istio-e2e:
